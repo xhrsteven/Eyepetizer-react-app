@@ -9,7 +9,13 @@ Eyepetizer is an easy to use social media app that allows users to upload photos
 * MongoDB
 * JSON Web Token
 * React
+* JavaScript
 
 # Tasks
-Create a database to store user information.
-Polish log in 
+* Create a database to store user information.
+* Polish log in
+* Customize web page design
+* Store routes to navigate through pages
+* Create comment box and user reaction (like,dislike) to store into database
+
+
