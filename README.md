@@ -20,5 +20,9 @@ Eyepetizer is an easy to use social media app that allows users to upload photos
 * Create Powerpoint
 * Logo design
 
+# Roles
 
+
+# Sketches
+https://files.slack.com/files-pri/T8WSMDU3A-FBQ0812BS/scratch1.png
 
