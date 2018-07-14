@@ -2,10 +2,10 @@
 A simple social media app that allows users to express their every day life through pictures and or videos of their choice. 
 
 # Description
-Eyepetizer is an easy to use social media app that allows users to upload photos/videos, follow other users, and comment on posts. Eyepitizer's goal is to bring all users together under one roof giving them the ability to share their lifestyle with users worldwide. 
+Eyepetizer is an easy to use social media app that allows users to upload photos/videos, follow other users, and comment on posts. Eyepetizer's goal is to bring all users together under one roof giving them the ability to share their lifestyle with users worldwide. 
 
 # API Used
-* Materialize
+* Materialize-UI
 * MongoDB
 * JSON Web Token
 * React
