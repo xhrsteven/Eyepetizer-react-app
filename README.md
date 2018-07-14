@@ -7,17 +7,21 @@ A simple social media app that allows users to express their every day life thro
 * John Bassili
 * Naeem 
 
-# Description
+# DESCRIPTION:
 Eyepetizer is an easy to use social media app that allows users to upload photos/videos, follow other users, and comment on posts. Eyepetizer's goal is to bring all users together under one roof giving them the ability to share their lifestyle with users worldwide. 
 
-# API Used
-* Materialize-UI
+# API USED:
+* React-Bootstrap
 * MongoDB
 * JSON Web Token
 * React
 * JavaScript
 
-# Tasks
+# ROLES:
+* Front-end will be a collaboration of John and Naem.
+* Back-end will be a collaboration of Steven and Marcus.
+
+# TASKS:
 * Create a database to store user information.
 * Polish log in
 * Customize web page design
@@ -26,7 +30,7 @@ Eyepetizer is an easy to use social media app that allows users to upload photos
 * Create Powerpoint
 * Logo design
 
-# Sketches
+# SKETCHES
 ![Screen Shot](/public/image/Scratch1.png)
 ![Screen Shot](/public/image/Scratch2.png)
 
