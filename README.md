@@ -17,5 +17,6 @@ Eyepetizer is an easy to use social media app that allows users to upload photos
 * Customize web page design
 * Store routes to navigate through pages
 * Create comment box and user reaction (like,dislike) to store into database
+* Create Powerpoint
 
 
