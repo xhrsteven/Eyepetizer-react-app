@@ -1,0 +1,27 @@
+{
+  "name": "Eyepetizer-react-app",
+  "version": "1.0.0",
+  "description": "A simple social media app that allows users to express their every day life through pictures and or videos of their choice. This is valuable because it creates communication worldwide with users to share and spread positive feedback. This app has the ability to bring users closer to each other without having to be in the same city, state, and or country. Also, there are different time zones that users are living in which gives followers the ability to comment on their activity in real time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhrsteven/Eyepetizer-react-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xhrsteven/Eyepetizer-react-app/issues"
+  },
+  "homepage": "https://github.com/xhrsteven/Eyepetizer-react-app#readme",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4"
+  }
+}
