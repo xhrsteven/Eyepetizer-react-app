@@ -31,8 +31,8 @@ Eyepetizer is an easy to use social media app that allows users to upload photos
 * Logo design
 
 # SKETCHES
-![Screen Shot](/client/assets/image/Scratch1.png)
-![Screen Shot](/client/assets/image/Scratch2.png)
+![Screen Shot](/client/assets/images/Scratch1.png)
+![Screen Shot](/client/assets/images/Scratch2.png)
 
 # SCHEDULE FOR PROJECT COMPLETION:
 * Logo design by July 18, 2018.
