@@ -1,5 +1,5 @@
 # Eyepetizer-react-app
-A simple social media app that allows users to express their every day life through pictures and or videos of their choice. This is valuable because it creates communication worldwide with users to share and spread positive feedback. This app has the ability to bring users closer to each other without having to be in the same city, state, and or country. Also, there are different time zones that users are living in which gives followers the ability to comment on their activity in real time. 
+A simple social media app made specifically for coders! 
 
 # GROUP MEMBERS:
 * Marcus Johnson
@@ -8,7 +8,7 @@ A simple social media app that allows users to express their every day life thro
 * Naeem 
 
 # DESCRIPTION:
-Eyepetizer is an easy to use social media app that allows users to upload photos/videos, follow other users, and comment on posts. Eyepetizer's goal is to bring all users together under one roof giving them the ability to share their lifestyle with users worldwide. 
+Eyepetizer is an easy to use social media app that allows users to upload photos, follow other users, and comment on posts reguarding benificial information on coding . User's will use this app to connect with other coders regarding events going on, job openings, and problems working on project/ assignment etc. 
 
 # API USED:
 * React-Bootstrap
