@@ -1,0 +1,1 @@
+//Once authenticated; redirect to component props.

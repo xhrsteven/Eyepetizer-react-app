@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/xhrsteven/Eyepetizer-react-app#readme",
   "dependencies": {
+    "@material-ui/core": "^1.4.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router": "^4.3.1",
