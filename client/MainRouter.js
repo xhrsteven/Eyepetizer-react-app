@@ -1,2 +1,0 @@
-// Basic Server Side Rendering
-
