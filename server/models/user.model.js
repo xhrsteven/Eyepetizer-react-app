@@ -2,10 +2,10 @@ import mongoose from 'mongoose';
 import crypto from 'crypto';
 
 const UserSchema = new mongoose.Schema({
-    name: {
+    username: {
         type: String,
         trim: true,
-        required: 'Name is required!'
+        required: 'Username is required!'
     },
     email: {
         type: String,

@@ -1,6 +1,6 @@
 //User sign in & sign out, fetch user json data
-const signin = (user) =>{
-    return fetch('/auth/signin', {
+const signIn = (user) =>{
+    return fetch('/auth/signIn', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -14,8 +14,8 @@ const signin = (user) =>{
     }).catch((err) =>{console.log(err)})
 };
 
-const signout = () =>{
-    return fetch('/auth/signout', {
+const signOut = () =>{
+    return fetch('/auth/signOut', {
         method: 'GET'
     })
     .then((response) =>{
@@ -24,4 +24,4 @@ const signout = () =>{
     .catch((err) =>{console.log(err)})
 };
 
-export {signin, signout}
+export { signIn, signOut }

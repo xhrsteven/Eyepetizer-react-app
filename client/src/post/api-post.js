@@ -1,4 +1,4 @@
-//listNewsFeed, listByUser, create, remove,like,unlike,comment,uncomment
+//listNewsFeed, listByUser, create, remove,like,unlike,comment,unComment
 const create = (params, credentials, post) =>{
 
 }
@@ -27,8 +27,8 @@ const comment = (params, credentials, postId, comment) =>{
 
 }
 
-const uncomment = (params, credentials, postId, comment) =>{
+const unComment = (params, credentials, postId, comment) =>{
 
 }
 
-export {create, listByUser, listNewsFeed, remove, like, unlike, comment, uncomment}
+export {create, listByUser, listNewsFeed, remove, like, unlike, comment, unComment}

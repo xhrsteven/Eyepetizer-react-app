@@ -1,4 +1,4 @@
-//Export create, list,read, update,remove,follow, unfollow,findPeople functions
+//Export create, list,read, update,remove,follow, unFollow,findPeople functions
 const create =(user) =>{
     return fetch('/api/users/', {
         method:'POST',
@@ -42,15 +42,15 @@ const follow =(params, credentials, followId) =>{
     }).catch((err) =>{ console.log(err)})
 };
 
-const unfollow = (params,credentials, unfollowId) =>{
-    return fetch("/api/users/unfollow/", {
+const unFollow = (params,credentials, unFollowId) =>{
+    return fetch("/api/users/unFollow/", {
       method: "PUT",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
         Authorization: "Bearer" + credentials.t
       },
-      body:JSON.stringify({userId: params.userId, unfollowId: unfollowId})
+      body:JSON.stringify({userId: params.userId, unFollowId: unFollowId})
     }).then((response) =>{
         return response.json()
     }).catch((err) =>{console.log(err)})
@@ -60,4 +60,4 @@ const findPeople = (params, credentials) =>{
 
 }
 
-export {create, list, read, update, remove, follow, unfollow, findPeople}
+export {create, list, read, update, remove, follow, unFollow, findPeople}
