@@ -12,20 +12,52 @@ const create =(user) =>{
         return response.json()
     }).catch((err) => {console.log(err)})
 };
-const list = ()=>{
 
+const list = ()=>{
+    return fetch('/api/users/', {
+        method: 'GET',
+    }).then(response =>{
+        return response.json()
+    }).catch((err) =>{console.log(err)})
 }
 
 const read = (params, credentials) =>{
-
+    return fetch('/api/users/'+params.userId, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer' + credentials.t
+        }
+    }).then((response) =>{
+        return response.json()
+    }).catch((err) =>{console.log(err)})
 }
 
 const update = (params, credentials, user) =>{
-
+    return fetch("/api/users/" + params.userId, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        Authorization: "Bearer" + credentials.t
+      },
+      body: user
+    }).then((response) =>{
+        return response.json()
+    }).catch((err) =>{console.log(err)})
 }
 
 const remove = (params, credentials) =>{
-
+    return fetch("/api/users/" + params.userId, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer" + credentials.t
+      }
+    }).then((response) =>{
+        return response.json()
+    }).catch((err) =>{console.log(err)})
 }
 
 const follow =(params, credentials, followId) =>{
@@ -48,7 +80,7 @@ const unFollow = (params,credentials, unFollowId) =>{
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: "Bearer" + credentials.t
+        "Authorization": "Bearer" + credentials.t
       },
       body:JSON.stringify({userId: params.userId, unFollowId: unFollowId})
     }).then((response) =>{
@@ -57,7 +89,16 @@ const unFollow = (params,credentials, unFollowId) =>{
 };
 
 const findPeople = (params, credentials) =>{
-
+    return fetch('/api/users/findpeople'+params.userId, {
+        method: 'GET',
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Authorization": "Bearer" + credentials.t
+        }
+    }).then((response) =>{
+        return response.json()
+    }).catch((err) =>{console.log(err)})
 }
 
 export {create, list, read, update, remove, follow, unFollow, findPeople}
