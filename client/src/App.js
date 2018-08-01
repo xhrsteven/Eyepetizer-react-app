@@ -3,10 +3,10 @@ import {BrowserRouter} from 'react-router-dom'
 import {hot} from 'react-hot-loader'
 import MainRouter from './MainRouter'
 
-const App = () =>{
+const App = () =>(
     <BrowserRouter>
         <MainRouter />
     </BrowserRouter>
-}
+)
 
 export default hot(module)(App);

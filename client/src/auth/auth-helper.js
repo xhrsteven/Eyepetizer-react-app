@@ -1,5 +1,5 @@
 //Once User sign out, sessionStorage cleared
-import signOut  from './api-auth'
+import {signOut}  from './api-auth'
 
 const auth = {
     isAuthenticated(){
