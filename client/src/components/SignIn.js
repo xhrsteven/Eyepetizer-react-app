@@ -24,39 +24,41 @@ TabContainer.propTypes = {
 };
 
 const styles = theme => ({
-    root: {
-        backgroundColor: theme.palette.background.paper,
-        width: 500,
-        margin: 'auto'
-        
-        
-        
-    },
-    Tab: {
-        maxWidth: 600,
-        margin: 'auto',
-        textAlign: 'center',
-        marginTop: theme.spacing.unit * 5,
-        paddingBottom: theme.spacing.unit * 2,
-    
-    },
-    error: {
-        verticalAlign: 'middle'
-    },
-    title: {
-        marginTop: theme.spacing.unit * 2,
-        color: theme.palette.openTitle
-    },
-    textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        width: 300
-    },
-    submit: {
-        margin: 'auto',
-        marginBottom: theme.spacing.unit * 2
-    }
-})
+  root: {
+    backgroundColor: theme.palette.background.paper,
+    width: 500,
+    margin: "auto",
+    height: 500
+  },
+  Tab: {
+    maxWidth: 600,
+    margin: "auto",
+    textAlign: "center",
+    marginTop: theme.spacing.unit * 8,
+    paddingBottom: theme.spacing.unit * 2
+  },
+  error: {
+    verticalAlign: "middle"
+  },
+  title: {
+    marginTop: theme.spacing.unit * 2,
+    color: theme.palette.openTitle
+  },
+  textField: {
+    marginTop: theme.spacing.unit * 4,
+    marginLeft: theme.spacing.unit * 10,
+    marginRight: theme.spacing.unit * 10,
+    width: 300,
+    margin: "auto"
+  },
+  submit: {
+    width: 300,
+    margin: "auto",
+    marginTop: theme.spacing.unit * 5,
+    marginLeft: theme.spacing.unit * 10,
+    marginRight: theme.spacing.unit * 10,
+  }
+});
 
 class SignIn extends Component {
     state = {
@@ -151,7 +153,7 @@ class SignIn extends Component {
                         <TextField
                             id="username"
                             type="username"
-                            label="username"
+                            label="Username"
                             margin="normal"
                             className={classes.textField}
                         />
@@ -173,7 +175,7 @@ class SignIn extends Component {
                         />
                         <br />
 
-                        <Button color="primary" variant="raised">
+                        <Button color="primary" variant="raised" className={classes.submit}>
                             Register
                         </Button>
                 </TabContainer>
