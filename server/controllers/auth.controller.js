@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import expressJwt from 'express-jwt';
 import config from './../../config/config';
 
-const signin = (req, res) =>{
+const signIn = (req, res) =>{
     User.findOne({
         'email': req.body.email
     }, (err, user) =>{
@@ -33,14 +33,14 @@ const signin = (req, res) =>{
     })
 };
 
-const signout = (req, res) =>{
+const signOut = (req, res) =>{
     res.clearCookie('t')
     return res.status(200).json({
         message: 'Signed out'
     })
 }
 
-const requireSignin = expressJwt({
+const requireSignIn = expressJwt({
     secret: config.jwtSecret,
     userProperty: 'auth'
 })
@@ -55,4 +55,4 @@ const hasAuthorization = (req, res, next) =>{
     next()
 }
 
-export default {signin, signout, requireSignin, hasAuthorization}
+export default {signIn, signOut, requireSignIn, hasAuthorization}
