@@ -1,12 +1,14 @@
 //Sign In /Register page view
 import React, {Component} from 'react'
-import {AppBar, Tab, Tabs, TextField, Button,Typography} from '@material-ui/core'
+import {AppBar, Tab, Tabs, TextField, Button,Typography, colors} from '@material-ui/core'
 import {Redirect} from 'react-router-dom'
 import SwipeableViews from 'react-swipeable-views'
 import { signIn } from './../auth/api-auth'
 import auth from './../auth/auth-helper'
 import PropTypes from 'prop-types'
 import {withStyles} from '@material-ui/core/styles'
+import './SignIn.css'
+import Menu from './Menu'
 
 function TabContainer({ children, dir }) {
     return (
@@ -25,13 +27,18 @@ const styles = theme => ({
     root: {
         backgroundColor: theme.palette.background.paper,
         width: 500,
+        margin: 'auto'
+        
+        
+        
     },
-    card: {
+    Tab: {
         maxWidth: 600,
         margin: 'auto',
         textAlign: 'center',
         marginTop: theme.spacing.unit * 5,
-        paddingBottom: theme.spacing.unit * 2
+        paddingBottom: theme.spacing.unit * 2,
+    
     },
     error: {
         verticalAlign: 'middle'
@@ -103,6 +110,7 @@ class SignIn extends Component {
 
         return (
            <div className={classes.root}>
+             <Menu />
                 <AppBar position="static" color="default">
                 <Tabs
                     value={this.state.value}
@@ -110,6 +118,7 @@ class SignIn extends Component {
                     indicatorColor="primary"
                     textColor="primary"
                     fullWidth
+                    // className ={classes.Tab}
                 >
                     <Tab label="Login" />
                     <Tab label="Register" />
@@ -126,14 +135,14 @@ class SignIn extends Component {
                     id="email"
                     type="email"
                     label="Email"
-
+                    className={classes.textField}
                     margin="normal"
                     /><br />
                     <TextField
                     id="password"
                     type="password"
                     label="Password"
-
+                    className={classes.textField}
                     margin="normal"
                     /><br />
                     <Button color="primary" variant="raised" onClick={this.clickSubmit} className={classes.submit}>Login</Button>
@@ -144,13 +153,14 @@ class SignIn extends Component {
                             type="username"
                             label="username"
                             margin="normal"
+                            className={classes.textField}
                         />
                         <br />
                         <TextField
                             id="email"
                             type="email"
                             label="Email"
-
+                            className={classes.textField}
                             margin="normal"
                         />
                         <br />
@@ -159,10 +169,11 @@ class SignIn extends Component {
                             type="password"
                             label="Password"
                             margin="normal"
+                            className={classes.textField}
                         />
                         <br />
 
-                        <Button>
+                        <Button color="primary" variant="raised">
                             Register
                         </Button>
                 </TabContainer>

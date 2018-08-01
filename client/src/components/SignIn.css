@@ -1,5 +1,7 @@
 body {
     padding-top: 60px;
     padding-bottom: 60px;
-    background-image: url('../../public/assets/images/loginBackground.jpg')
+    margin: 0 auto;
+    background-image: url('./../images/loginBackground.jpg');
 }
+
