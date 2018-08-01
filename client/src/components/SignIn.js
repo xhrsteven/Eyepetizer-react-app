@@ -1,7 +1,7 @@
 //Sign In /Register page view
 import React, {Component} from 'react'
-import {AppBar, Tab, Tabs, TextField, Button,Typography, colors} from '@material-ui/core'
-import {Redirect} from 'react-router-dom'
+import {AppBar, Tab, Tabs, TextField, Button,Typography, Dialog, DialogContent,DialogTitle,DialogActions, DialogContentText, Icon} from '@material-ui/core'
+import {Redirect, Link} from 'react-router-dom'
 import SwipeableViews from 'react-swipeable-views'
 import { signIn } from './../auth/api-auth'
 import auth from './../auth/auth-helper'
@@ -9,6 +9,7 @@ import PropTypes from 'prop-types'
 import {withStyles} from '@material-ui/core/styles'
 import './SignIn.css'
 import Menu from './Menu'
+import { create } from 'domain';
 
 function TabContainer({ children, dir }) {
     return (
@@ -62,11 +63,13 @@ const styles = theme => ({
 
 class SignIn extends Component {
     state = {
+        username: '',
         email: '',
         password: '',
         error: '',
         redirectToReferrer: false,
-        value: 0
+        value: 0,
+        open: false
     }
 
     clickSubmit = () => {
@@ -82,6 +85,20 @@ class SignIn extends Component {
                 auth.authenticate(data, () => {
                     this.setState({ redirectToReferrer: true })
                 })
+            }
+        })
+    }
+    clickRegister = () =>{
+        const user ={
+            username: this.state.username || undefined,
+            email: this.state.email || undefined,
+            password: this.state.password || undefined
+        }
+        create(user).then((data) =>{
+            if(data.error){
+                this.setState({error: data.error})
+            }else{
+                this.setState({error: '', open: true})
             }
         })
     }
@@ -147,59 +164,66 @@ class SignIn extends Component {
                     className={classes.textField}
                     margin="normal"
                     /><br />
+                    {this.state.error && (<Typography component="p" color="error">
+                            <Icon color="error" className={classes.error}>error</Icon>
+                            {this.state.error}</Typography>) }
                     <Button color="primary" variant="raised" onClick={this.clickSubmit} className={classes.submit}>Login</Button>
                 </TabContainer>
+                
                 <TabContainer dir={theme.direction}>
                         <TextField
                             id="username"
+                            value={this.state.username}
                             type="username"
                             label="Username"
                             margin="normal"
+                            onChange={this.handleChange('username')}
                             className={classes.textField}
                         />
                         <br />
                         <TextField
                             id="email"
+                            value={this.state.email}
                             type="email"
                             label="Email"
+                            onChange={this.handleChange('email')}
                             className={classes.textField}
                             margin="normal"
                         />
                         <br />
                         <TextField
                             id="password"
+                            value={this.state.password}
                             type="password"
                             label="Password"
+                            onChange={this.handleChange('password')}
                             margin="normal"
                             className={classes.textField}
                         />
                         <br />
-
-                        <Button color="primary" variant="raised" className={classes.submit}>
+                        {this.state.error && (<Typography component="p" color="error">
+                            <Icon color="error" className={classes.error}>error</Icon>
+                            {this.state.error}</Typography>) }
+                        <Button color="primary" variant="raised" className={classes.submit} onClick={this.clickRegister}>
                             Register
                         </Button>
+                        <Dialog open={this.state.open} disableBackdropClick={true}>
+                            <DialogTitle>New Account</DialogTitle>
+                            <DialogContent>
+                                <DialogContentText>
+                                    New account successfully created!
+                                </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                                <Link to={from}>
+                                    <Button color='primary' autoFocus='autoFocus' variant='raised'>LOGIN</Button>
+                                </Link>
+                            </DialogActions>
+                        </Dialog>
                 </TabContainer>
 
                 </SwipeableViews>
             </div>
-            // <Card className={classes.card}>
-            //     <CardContent>
-            //         <Typography type="headline" component="h2" className={classes.title}>
-            //             Sign In
-            //         </Typography>
-            //         <TextField id="email" type="email" label="Email" className={classes.textField} value={this.state.email} onChange={this.handleChange('email')} margin="normal" /><br />
-            //         <TextField id="password" type="password" label="Password" className={classes.textField} value={this.state.password} onChange={this.handleChange('password')} margin="normal" />
-            //         <br /> {
-            //             this.state.error && (<Typography component="p" color="error">
-            //                 <Icon color="error" className={classes.error}>error</Icon>
-            //                 {this.state.error}
-            //             </Typography>)
-            //         }
-            //     </CardContent>
-            //     <CardActions>
-            //         <Button color="primary" variant="raised" onClick={this.clickSubmit} className={classes.submit}>Submit</Button>
-            //     </CardActions>
-            // </Card>
         )
     }
 }
