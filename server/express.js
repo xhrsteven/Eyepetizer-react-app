@@ -1,7 +1,7 @@
 
 import express from 'express';
 import path from 'path';
-import bodyPaser from 'body-parser';
+import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compress from 'compression';
 import cors from 'cors';
@@ -17,20 +17,68 @@ import ReactDOMServer from 'react-dom/server';
 import MainRouter from './../client/MainRouter';
 import StaticRouter from 'react-router-dom/StaticRouter';
 
+import { SheetsRegistry } from 'react-jss/lib/jss'
+import JssProvider from 'react-jss/lib/JssProvider'
+import { MuiThemeProvider, createMuiTheme, createGenerateClassName } from '@material-ui/core/styles'
+import { teal, orange } from '@material-ui/core/colors'
+
+// const CURRENT_WORKING_DIR = process.cwd();
 const app = express();
 
-app.use(bodyPaser.json());
-app.use(bodyPaser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(compress());
 //secure apps by HTTP headers
 app.use(helmet());
 app.use(cors());
 
-
+// app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 app.use('/', userRoutes);
 app.use('/', authRoutes);
 app.use('/', postRoutes);
+
+app.get('*', (req, res) => {
+    const sheetsRegistry = new SheetsRegistry()
+    const theme = createMuiTheme({
+        palette: {
+            primary: {
+                light: '#52c7b8',
+                main: '#009688',
+                dark: '#00675b',
+                contrastText: '#fff',
+            },
+            secondary: {
+                light: '#ffd95b',
+                main: '#ffa726',
+                dark: '#c77800',
+                contrastText: '#000',
+            },
+            openTitle: teal['700'],
+            protectedTitle: orange['700'],
+            type: 'light'
+        }
+    })
+    const generateClassName = createGenerateClassName()
+    const context = {}
+    const markup = ReactDOMServer.renderToString(
+        <StaticRouter location={req.url} context={context}>
+            <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
+                <MuiThemeProvider theme={theme} sheetsManager={new Map()}>
+                    <MainRouter />
+                </MuiThemeProvider>
+            </JssProvider>
+        </StaticRouter>
+    )
+    if (context.url) {
+        return res.redirect(303, context.url)
+    }
+    const css = sheetsRegistry.toString()
+    res.status(200).send(Template({
+        markup: markup,
+        css: css
+    }))
+})
 
 
 app.use((err, req, res, next) =>{
