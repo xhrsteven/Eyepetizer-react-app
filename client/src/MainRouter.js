@@ -10,13 +10,13 @@ import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
 
 class MainRouter extends Component {
-    //Remove css style before loading
-    // componentDidMount() {
-    //     const jssStyles = document.getElementById('jss-server-side')
-    //     if (jssStyles && jssStyles.parentNode) {
-    //         jssStyles.parentNode.removeChild(jssStyles)
-    //     }
-    // }
+    // Remove css style before loading
+    componentDidMount() {
+        const jssStyles = document.getElementById('jss-server-side')
+        if (jssStyles && jssStyles.parentNode) {
+            jssStyles.parentNode.removeChild(jssStyles)
+        }
+    }
     
     render(){
         return (

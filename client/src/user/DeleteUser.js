@@ -4,7 +4,7 @@ import {IconButton, Button, Dialog, DialogActions, DialogContent, DialogContentT
 import {DeleteIcon} from '@material-ui/icons'
 import {remove} from './api-user'
 import auth from './../auth/auth-helper'
-import {Redirect, Link} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 class DeleteUser extends Component {
     state={

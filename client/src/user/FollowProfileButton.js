@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
-import {withStyles, Button} from '@material-ui/core';
-import {follow, unfollow} from './api-user.js';
+import {withStyles} from '@material-ui/core/styles';
+import {follow, unFollow} from './api-user.js';
+import {Button} from '@material-ui/core/Button';
 
 class FollowProfileButton extends Component {
     followClick =()=>{
         this.props.onButtonClick(follow)
     }
-    unfollowClick = ()=>{
-        this.props.onButtonClick(unfollow)
+    unFollowClick = ()=>{
+        this.props.onButtonClick(unFollow)
     }
     render(){
         return(
             <div>
-            {this.props.following ? (<Button onClick={this.unfollowClick}>unfollow</Button>)
+            {this.props.following ? (<Button onClick={this.unFollowClick}>unFollow</Button>)
              : (<Button onClick={this.followClick}>Follow</Button>)}
             </div>
         )

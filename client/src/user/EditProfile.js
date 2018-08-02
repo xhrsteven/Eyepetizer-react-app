@@ -100,7 +100,7 @@ class EditProfile extends Component {
         const {classes} = this.props
         const photoUrl = this.state.id  
             ? `/api/users/photo/$(this.state.id)?${new Date().getTime()}`
-            : `/api/users/defaultphoto`
+            : `/api/users/defaultPhoto`
         if(this.state.redirectToProfile){
             return (<Redirect to={'/user/'+this.state.id} />)
         }

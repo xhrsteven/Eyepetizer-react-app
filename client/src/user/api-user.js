@@ -89,7 +89,7 @@ const unFollow = (params,credentials, unFollowId) =>{
 };
 
 const findPeople = (params, credentials) =>{
-    return fetch('/api/users/findpeople'+params.userId, {
+    return fetch('/api/users/findPeople'+params.userId, {
         method: 'GET',
         headers: {
             Accept: "application/json",
