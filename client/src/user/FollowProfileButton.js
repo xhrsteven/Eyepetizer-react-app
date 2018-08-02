@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
-import {withStyles} from '@material-ui/core/styles';
+// import {withStyles} from '@material-ui/core/styles';
 import {follow, unFollow} from './api-user.js';
 import {Button} from '@material-ui/core/Button';
 

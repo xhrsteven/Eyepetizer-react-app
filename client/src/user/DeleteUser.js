@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {IconButton, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from '@material-ui/core'
-import {DeleteIcon} from '@material-ui/icons'
+import {Delete} from '@material-ui/icons/Delete'
 import {remove} from './api-user'
 import auth from './../auth/auth-helper'
 import {Redirect} from 'react-router-dom'
@@ -39,7 +39,7 @@ class DeleteUser extends Component {
         return (
             <span>
                 <IconButton aria-label='Delete' onClick={this.clickButton} color="secondary">
-                    <DeleteIcon />
+                    <Delete />
                 </IconButton>
                 <Dialog open={this.state.open} onClose={this.handleRequestClose}>
                     <DialogTitle>

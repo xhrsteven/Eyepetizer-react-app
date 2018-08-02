@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import auth from './../auth/auth-helper'
 import {Card, CardHeader,CardContent,CardActions, Typography, Avatar,IconButton, Divider} from '@material-ui/core'
-import {DeleteIcon, FavoriteIcon, FavoriteBorderIcon, CommentIcon} from '@material-ui/icons'
+import {Delete, Favorite, FavoriteBorder, Comment} from '@material-ui/icons'
 import PropTypes from 'prop-types'
 import {withStyles} from '@material-ui/core/styles'
 import {Link} from 'react-router-dom'
@@ -103,7 +103,7 @@ class Post extends Component {
                     }
                     action={this.props.post.postedBy._id === auth.isAuthenticated().user._id &&
                         <IconButton onClick={this.deletePost}>
-                            <DeleteIcon />
+                            <Delete />
                         </IconButton>
                     }
                     title={<Link to={"/user/" + this.props.post.postedBy._id}>{this.props.post.postedBy.name}</Link>}
@@ -118,20 +118,20 @@ class Post extends Component {
                         (<div className={classes.photo}>
                             <img
                                 className={classes.media}
-                                src={'/api/posts/photo/' + this.props.post._id}
+                                src={'/api/posts/photo/' + this.props.post._id} alt='profilePhoto'
                             />
                         </div>)}
                 </CardContent>
                 <CardActions>
                     {this.state.like
                         ? <IconButton onClick={this.like} className={classes.button} aria-label="Like" color="secondary">
-                            <FavoriteIcon />
+                            <Favorite />
                         </IconButton>
                         : <IconButton onClick={this.like} className={classes.button} aria-label="Unlike" color="secondary">
-                            <FavoriteBorderIcon />
+                            <FavoriteBorder />
                         </IconButton>} <span>{this.state.likes}</span>
                     <IconButton className={classes.button} aria-label="Comment" color="secondary">
-                        <CommentIcon />
+                        <Comment />
                     </IconButton> <span>{this.state.comments.length}</span>
                 </CardActions>
                 <Divider />

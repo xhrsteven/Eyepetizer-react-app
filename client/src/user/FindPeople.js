@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {withStyles} from '@material-ui/core/styles'
-import {Paper, Card, List, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText, Avatar, Button,IconButton, Typography, Snackbar} from '@material-ui/core'
+import {Paper, List, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText, Avatar, Button,IconButton, Typography, Snackbar} from '@material-ui/core'
 import {Link} from 'react-router-dom'
 import {findPeople, follow} from './api-user'
 import auth from './../auth/auth-helper'

@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import auth from './../auth/auth-helper'
 import { withStyles, Grid } from '../../node_modules/@material-ui/core';
 import PropTypes from 'prop-types'
-import Newsfeed from '../post/Newsfeed'
+import NewsFeed from '../post/Newsfeed'
 import FindPeople from '../user/FindPeople'
 
 const styles = themes =>({
@@ -37,7 +37,7 @@ class Home extends Component {
                 {!this.state.defaultPage &&
                     <Grid container spacing ={24}>
                         <Grid item xs={8} sm={7}>
-                            <Newsfeed />
+                            <NewsFeed />
                         </Grid>
                         <Grid item xs={6} sm={5}>
                             <FindPeople />

@@ -4,6 +4,7 @@ import auth from './../auth/auth-helper'
 import {CardHeader, TextField, Avatar,Icon} from '@material-ui/core'
 import PropTypes from 'prop-types'
 import {withStyles} from '@material-ui/core/styles'
+import {Link} from 'react-router-dom'
 import {comment, unComment} from './api-post'
 
 const styles = theme => ({
@@ -41,7 +42,7 @@ class Comments extends Component {
         this.setState({ [name]: event.target.value })
     }
     addComment = (event) => {
-        if (event.keyCode == 13 && event.target.value) {
+        if (event.keyCode === 13 && event.target.value) {
             event.preventDefault()
             const jwt = auth.isAuthenticated()
             comment({

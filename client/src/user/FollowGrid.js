@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {withStyle} from '@material-ui/core/styles'
-import {List, ListItem, ListItemAvatar,ListItemIcon, ListItemSecondaryAction,ListItemText, Avatar, Button, Typography, GridList, GridListTile} from '@material-ui/core'
+import {withStyles} from '@material-ui/core/styles'
+import {Avatar, Typography, GridList, GridListTile} from '@material-ui/core'
 import {Link} from 'react-router-dom'
 
 const styles = theme => ({
