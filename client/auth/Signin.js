@@ -77,30 +77,33 @@ class Signin extends Component {
       return (<Redirect to={from}/>)
     }
 
-    return (
-      <Card className={classes.card}>
+    return <Card className={classes.card}>
         <CardContent>
-          <img src='./../assets/images/eye1.png'/>
-          <Typography>
-            Welcome Back!
-          </Typography><br/>
-          <Typography type="headline" component="h2" className={classes.title}>
-            Sign In
+        <i className="material-icons">
+          remove_red_eye
+        </i>
+          <Typography type="headline" className={classes.title}>
+            <h1>Welcome Back!</h1>
+            <h1>Log In Now</h1>
+            <p>Access Eyepetizer's best ideas with a free account</p>
           </Typography>
-          <TextField id="email" type="email" label="Email" className={classes.textField} value={this.state.email} onChange={this.handleChange('email')} margin="normal"/><br/>
-          <TextField id="password" type="password" label="Password" className={classes.textField} value={this.state.password} onChange={this.handleChange('password')} margin="normal"/>
-          <br/> {
-            this.state.error && (<Typography component="p" color="error">
-              <Icon color="error" className={classes.error}>error</Icon>
+          <TextField id="email" type="email" label="Email" className={classes.textField} value={this.state.email} onChange={this.handleChange("email")} margin="normal" />
+          <br />
+          <TextField id="password" type="password" label="Password" className={classes.textField} value={this.state.password} onChange={this.handleChange("password")} margin="normal" />
+          <br /> {this.state.error && <Typography component="p" color="error">
+              <Icon color="error" className={classes.error}>
+                error
+              </Icon>
               {this.state.error}
-            </Typography>)
-          }
+            </Typography>}
         </CardContent>
         <CardActions>
-          <Button color="primary" variant="raised" onClick={this.clickSubmit} className={classes.submit}>Submit</Button>
+          <Button color="primary" variant="raised" onClick={this.clickSubmit} className={classes.submit}>
+            Log in
+          </Button>
         </CardActions>
-      </Card>
-    )
+      <a href='/signup'>Not on Eyepetizer yet? Sign up</a>
+      </Card>;
   }
 }
 
