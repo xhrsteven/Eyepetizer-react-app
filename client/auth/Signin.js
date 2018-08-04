@@ -12,7 +12,7 @@ import {signin} from './api-auth.js'
 
 const styles = theme => ({
   card: {
-    maxWidth: 600,
+    maxWidth: 400,
     margin: 'auto',
     textAlign: 'center',
     marginTop: theme.spacing.unit * 5,
@@ -28,7 +28,7 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 300
+    width: 250
   },
   submit: {
     margin: 'auto',
@@ -80,6 +80,10 @@ class Signin extends Component {
     return (
       <Card className={classes.card}>
         <CardContent>
+          <img src='./../assets/images/eye1.png'/>
+          <Typography>
+            Welcome Back!
+          </Typography><br/>
           <Typography type="headline" component="h2" className={classes.title}>
             Sign In
           </Typography>
