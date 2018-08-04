@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from "prop-types";
+import {withStyles} from 'material-ui/styles'
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
@@ -14,10 +16,12 @@ const isActive = (history, path) => {
   else
     return {color: '#ffffff'}
 }
+
 const Menu = withRouter(({history}) => (
+  
   <AppBar position="static">
     <Toolbar>
-      <Typography type="title" color="inherit">
+      <Typography variant="title" color="inherit" >
         Eyepetizer
       </Typography>
       <Link to="/">
@@ -25,10 +29,12 @@ const Menu = withRouter(({history}) => (
           <HomeIcon/>
         </IconButton>
       </Link>
+      
       {
-        !auth.isAuthenticated() && (<span>
+        !auth.isAuthenticated() && (
+          <span>
           <Link to="/signup">
-            <Button style={isActive(history, "/signup")}>Sign up
+            <Button style={isActive(history, "/signup")} color='inherit'>Sign up
             </Button>
           </Link>
           <Link to="/signin">
