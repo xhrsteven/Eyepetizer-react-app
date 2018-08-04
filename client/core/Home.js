@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {withStyles} from 'material-ui/styles'
 import Card, {CardContent, CardMedia} from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
-import seashellImg from './../assets/images/loginBackground.jpg'
+import background from './../assets/images/loginBackground.jpg'
 import {Link} from 'react-router-dom'
 import Grid from 'material-ui/Grid'
 import auth from './../auth/auth-helper'
@@ -57,7 +57,7 @@ class Home extends Component {
                 <Typography type="headline" component="h2" className={classes.title}>
                   Home Page
                 </Typography>
-                <CardMedia className={classes.media} image={seashellImg} title="Unicorn Shells"/>
+                <CardMedia className={classes.media} image={background} title="Unicorn Shells"/>
                 <CardContent>
                   <Typography type="body1" component="p">
                     Welcome to the Eyepetizer Social home page. 
