@@ -8,7 +8,7 @@ A simple social media app made specifically for coders!
 * Naeem 
 
 # DESCRIPTION:
-Eyepetizer is an easy to use social media app that allows users to upload photos, follow other users, and comment on posts reguarding benificial information on coding . User's will use this app to connect with other coders regarding events going on, job openings, and problems working on project/ assignment etc. 
+Eyepetizer is an easy to use social media app for coders that allows users to upload photos, follow other users, and comment on posts. Think of it as an Instagram specifically designed for coders. Web Developers and future web developers can use this platform to post pictures or messages regarding their every day life. User's can use this app to connect with other coders regarding events going on, job openings, or problems working on projects/assignments etc. 
 
 # API USED:
 * React-Bootstrap
