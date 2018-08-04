@@ -1,5 +1,4 @@
-//html root
-export default ({ markup, css }) => {
+export default ({markup, css}) => {
     return `<!doctype html>
       <html lang="en">
         <head>
@@ -7,6 +6,7 @@ export default ({ markup, css }) => {
           <title>Eyepetizer</title>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400">
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+          <link rel="icon" href="./assets/images/eye1.png" type="image/x-icon"/>
           <style>
               a{
                 text-decoration: none
@@ -18,5 +18,5 @@ export default ({ markup, css }) => {
           <style id="jss-server-side">${css}</style>
           <script type="text/javascript" src="/dist/bundle.js"></script>
         </body>
-      </html>`
+      </html>`;
 }
