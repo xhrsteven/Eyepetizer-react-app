@@ -77,14 +77,16 @@ class Signin extends Component {
       return (<Redirect to={from}/>)
     }
 
-    return <Card className={classes.card}>
+    return (
+    <div > 
+      <Card className={classes.card}>
         <CardContent>
         <i className="material-icons">
           remove_red_eye
         </i>
           <Typography type="headline" className={classes.title}>
             <h1>Welcome Back!</h1>
-            <h1>Log In Now</h1>
+            <h1>Log in Now</h1>
             <p>Access Eyepetizer's best ideas with a free account</p>
           </Typography>
           <TextField id="email" type="email" label="Email" className={classes.textField} value={this.state.email} onChange={this.handleChange("email")} margin="normal" />
@@ -103,7 +105,9 @@ class Signin extends Component {
           </Button>
         </CardActions>
       <a href='/signup'>Not on Eyepetizer yet? Sign up</a>
-      </Card>;
+      </Card>
+    </div>
+    )
   }
 }
 

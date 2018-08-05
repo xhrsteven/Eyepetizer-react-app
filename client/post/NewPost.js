@@ -100,8 +100,8 @@ class NewPost extends Component {
           />
       <CardContent className={classes.cardContent}>
         <TextField
-            placeholder="Share your thoughts ..."
-            multiline
+            placeholder="Share your moment here"
+            // multiline
             rows="3"
             value={this.state.text}
             onChange={this.handleChange('text')}

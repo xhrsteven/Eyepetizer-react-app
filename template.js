@@ -6,11 +6,10 @@ export default ({markup, css}) => {
           <title>Eyepetizer</title>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400">
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-          <link rel="icon" href="./assets/images/eye1.png" type="image/x-icon"/>
           <style>
               a{
                 text-decoration: none
-              }
+              };
           </style>
         </head>
         <body style="margin:0">

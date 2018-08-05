@@ -2,35 +2,48 @@ import React from 'react'
 import MainRouter from './MainRouter'
 import {BrowserRouter} from 'react-router-dom'
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
-import {teal, orange} from 'material-ui/colors'
+import {indigo, orange} from 'material-ui/colors'
 import { hot } from 'react-hot-loader'
+import Paper from 'material-ui/Paper'
 
 // Create a theme instance.
 const theme = createMuiTheme({
   palette: {
     primary: {
-    light: '#52c7b8',
-    main: '#009688',
-    dark: '#00675b',
-    contrastText: '#fff',
+      light: "#6573c3",
+      main: "#3f51b5",
+      dark: "#2c387e",
+      contrastText: "#fff"
   },
   secondary: {
-    light: '#ffd95b',
-    main: '#ffa726',
-    dark: '#c77800',
-    contrastText: '#000',
+    light: "##33bfff",
+    main: "#00b0ff",
+    dark: "#007bb2",
+    contrastText: "#000"
   },
-    openTitle: teal['700'],
+    typography: {
+      // Use the system font over Roboto.
+      fontFamily: 'Avenir Next, Roboto,"Helvetica Neue",Arial,sans-serif',
+      htmlFontSize: 16,
+    },
+    openTitle: indigo['900'],
     protectedTitle: orange['700'],
     type: 'light'
   }
 })
 
+const styles = {
+  paperContainer: {
+    backgroundImage: `url(${"/client/assets/images/loginBackground.jpg"})`
+  }
+}
 const App = () => (
   <BrowserRouter>
-    <MuiThemeProvider theme={theme}>
-      <MainRouter/>
-    </MuiThemeProvider>
+    
+      <MuiThemeProvider theme={theme}>
+        <MainRouter />
+      </MuiThemeProvider>
+    
   </BrowserRouter>
 )
 

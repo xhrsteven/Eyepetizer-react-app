@@ -17,34 +17,35 @@ import Comments from './Comments'
 
 const styles = theme => ({
   card: {
-    maxWidth:600,
-    margin: 'auto',
-    marginBottom: theme.spacing.unit*3,
-    backgroundColor: 'rgba(0, 0, 0, 0.06)'
+    maxWidth: 600,
+    margin: "auto",
+    marginBottom: theme.spacing.unit * 3,
+    backgroundColor: "rgba(0, 0, 0, 0.06)"
   },
   cardContent: {
-    backgroundColor: 'white',
-    padding: `${theme.spacing.unit*2}px 0px`
+    backgroundColor: "white",
+    padding: `${theme.spacing.unit * 2}px 0px`
   },
   cardHeader: {
     paddingTop: theme.spacing.unit,
     paddingBottom: theme.spacing.unit
   },
   text: {
-    margin: theme.spacing.unit*2
+    backgroundColor: "ffefc2",
+    margin: theme.spacing.unit * 2
   },
   photo: {
-    textAlign: 'center',
-    backgroundColor: '#f2f5f4',
-    padding:theme.spacing.unit
+    textAlign: "center",
+    backgroundColor: "#b2ebf2",
+    padding: theme.spacing.unit
   },
   media: {
     height: 200
   },
   button: {
-   margin: theme.spacing.unit,
+    margin: theme.spacing.unit
   }
-})
+});
 
 class Post extends Component {
   state = {

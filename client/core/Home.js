@@ -9,12 +9,16 @@ import Grid from 'material-ui/Grid'
 import auth from './../auth/auth-helper'
 import FindPeople from './../user/FindPeople'
 import Newsfeed from './../post/Newsfeed'
-
+let imgUrl = './../assets/images/loginBackground.jpg'
 const styles = theme => ({
   root: {
     flexGrow: 1,
     margin: 30,
-  },
+    backgroundImage: 'url(' + imgUrl + ')',
+    backgroundSize: 'cover',
+      overflow: 'hidden'
+    },
+  
   card: {
     maxWidth: 600,
     margin: 'auto',
@@ -51,13 +55,14 @@ class Home extends Component {
     return (
       <div className={classes.root}>
         {this.state.defaultPage &&
+          <div>
           <Grid container spacing={24}>
             <Grid item xs={12}>
               <Card className={classes.card}>
                 <Typography type="headline" component="h2" className={classes.title}>
                   Home Page
                 </Typography>
-                <CardMedia className={classes.media} image={background} title="Unicorn Shells"/>
+                <CardMedia className={classes.media} image={background} title="rainer"/>
                 <CardContent>
                   <Typography type="body1" component="p">
                     Welcome to the Eyepetizer Social home page. 
@@ -66,13 +71,14 @@ class Home extends Component {
               </Card>
             </Grid>
           </Grid>
+          </div>
         }
         {!this.state.defaultPage &&
           <Grid container spacing={24}>
-            <Grid item xs={8} sm={7}>
+            <Grid item xs={9} sm={7}>
               <Newsfeed/>
             </Grid>
-            <Grid item xs={6} sm={5}>
+            <Grid item xs={3} sm={5}>
               <FindPeople/>
             </Grid>
           </Grid>

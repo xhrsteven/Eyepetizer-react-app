@@ -53,22 +53,25 @@ app.get('*', (req, res) => {
    const theme = createMuiTheme({
      palette: {
        primary: {
-       light: '#52c7b8',
-       main: '#009688',
-       dark: '#00675b',
-       contrastText: '#fff',
-     },
-     secondary: {
-       light: '#ffd95b',
-       main: '#ffa726',
-       dark: '#c77800',
-       contrastText: '#000',
-     },
-       openTitle: teal['700'],
-       protectedTitle: orange['700'],
-       type: 'light'
+         light: "#6573c3",
+         main: "#3f51b5",
+         dark: "#2c387e",
+         contrastText: "#fff"
+       },
+       secondary: {
+         light: "##33bfff",
+         main: "#00b0ff",
+         dark: "#007bb2",
+         contrastText: "#000"
+       },
+       typography: {
+         fontSize: 12
+       },
+       openTitle: teal["700"],
+       protectedTitle: orange["700"],
+       type: "light"
      }
-   })
+   });
    const generateClassName = createGenerateClassName()
    const context = {}
    const markup = ReactDOMServer.renderToString(

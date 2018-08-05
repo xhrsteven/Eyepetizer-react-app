@@ -9,17 +9,20 @@ import {withStyles} from 'material-ui/styles'
 import {create} from './api-user.js'
 import Dialog, {DialogActions, DialogContent, DialogContentText, DialogTitle} from 'material-ui/Dialog'
 import {Link} from 'react-router-dom'
+// import background from './../assets/images/loginBackground.jpg'
+// import './signup.css'
 
 const styles = theme => ({
+ 
   card: {
     maxWidth: 400,
-    margin: 'auto',
-    textAlign: 'center',
+    margin: "auto",
+    textAlign: "center",
     marginTop: theme.spacing.unit * 5,
     paddingBottom: theme.spacing.unit * 2
   },
   error: {
-    verticalAlign: 'middle'
+    verticalAlign: "middle"
   },
   title: {
     marginTop: theme.spacing.unit * 2,
@@ -28,13 +31,13 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 300
+    width: 250
   },
   submit: {
-    margin: 'auto',
+    margin: "auto",
     marginBottom: theme.spacing.unit * 2
   }
-})
+});
 
 class Signup extends Component {
   state = {
@@ -66,7 +69,8 @@ class Signup extends Component {
 
   render() {
     const {classes} = this.props
-    return <div>
+    return (
+    <div>
         <Card className={classes.card}>
           <CardContent>
             <i className="material-icons">remove_red_eye</i>
@@ -105,12 +109,12 @@ class Signup extends Component {
           <DialogActions>
             <Link to="/signin">
               <Button color="primary" autoFocus="autoFocus" variant="raised">
-                Sign In
+                Log In Here
               </Button>
             </Link>
           </DialogActions>
         </Dialog>
-      </div>;
+      </div>);
   }
 }
 
