@@ -9,13 +9,23 @@ import {withStyles} from 'material-ui/styles'
 import auth from './../auth/auth-helper'
 import {Redirect} from 'react-router-dom'
 import {signin} from './api-auth.js'
+import background from "./../assets/images/loginBackground.jpg";
 
 const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    margin: 0,
+    padding: 0,
+    height: 1000,
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',
+    overflow: 'hidden',
+  },
   card: {
     maxWidth: 400,
     margin: 'auto',
     textAlign: 'center',
-    marginTop: theme.spacing.unit * 5,
+    marginTop: 100,
     paddingBottom: theme.spacing.unit * 2
   },
   error: {
@@ -77,37 +87,35 @@ class Signin extends Component {
       return (<Redirect to={from}/>)
     }
 
-    return (
-    <div > 
-      <Card className={classes.card}>
-        <CardContent>
-        <i className="material-icons">
-          remove_red_eye
-        </i>
-          <Typography type="headline" className={classes.title}>
-            <h1>Welcome Back!</h1>
+    return <div className={classes.root}>
+        <Card className={classes.card}>
+          <CardContent>
+            <i className="material-icons">remove_red_eye</i>
+            <Typography type="display1" component="h1" align="center" className={classes.title}>
+            <h1>Welcome Back! </h1><br />
             <h1>Log in Now</h1>
-            <p>Access Eyepetizer's best ideas with a free account</p>
-          </Typography>
-          <TextField id="email" type="email" label="Email" className={classes.textField} value={this.state.email} onChange={this.handleChange("email")} margin="normal" />
-          <br />
-          <TextField id="password" type="password" label="Password" className={classes.textField} value={this.state.password} onChange={this.handleChange("password")} margin="normal" />
-          <br /> {this.state.error && <Typography component="p" color="error">
-              <Icon color="error" className={classes.error}>
-                error
-              </Icon>
-              {this.state.error}
-            </Typography>}
-        </CardContent>
-        <CardActions>
-          <Button color="primary" variant="raised" onClick={this.clickSubmit} className={classes.submit}>
-            Log in
-          </Button>
-        </CardActions>
-      <a href='/signup'>Not on Eyepetizer yet? Sign up</a>
-      </Card>
-    </div>
-    )
+            </Typography>
+            <Typography type="headline" component="p" align="center" className={classes.title}>
+              Access Eyepetizer's best ideas with a free account
+            </Typography>
+            <TextField id="email" type="email" label="Email" className={classes.textField} value={this.state.email} onChange={this.handleChange("email")} margin="normal" />
+            <br />
+            <TextField id="password" type="password" label="Password" className={classes.textField} value={this.state.password} onChange={this.handleChange("password")} margin="normal" />
+            <br /> {this.state.error && <Typography component="p" color="error">
+                <Icon color="error" className={classes.error}>
+                  error
+                </Icon>
+                {this.state.error}
+              </Typography>}
+          </CardContent>
+          <CardActions>
+            <Button color="primary" variant="raised" onClick={this.clickSubmit} className={classes.submit}>
+              Log in
+            </Button>
+          </CardActions>
+          <a href="/signup">Not on Eyepetizer yet? Sign up</a>
+        </Card>
+      </div>;
   }
 }
 

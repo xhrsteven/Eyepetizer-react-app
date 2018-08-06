@@ -9,16 +9,23 @@ import {withStyles} from 'material-ui/styles'
 import {create} from './api-user.js'
 import Dialog, {DialogActions, DialogContent, DialogContentText, DialogTitle} from 'material-ui/Dialog'
 import {Link} from 'react-router-dom'
-// import background from './../assets/images/loginBackground.jpg'
-// import './signup.css'
+import background from './../assets/images/loginBackground.jpg'
 
 const styles = theme => ({
- 
+  root: {
+    flexGrow: 1,
+    margin: 0,
+    padding: 0,
+    height: 1000,
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',
+    overflow: 'hidden',
+  },
   card: {
     maxWidth: 400,
     margin: "auto",
     textAlign: "center",
-    marginTop: theme.spacing.unit * 5,
+    marginTop: 100,
     paddingBottom: theme.spacing.unit * 2
   },
   error: {
@@ -69,17 +76,16 @@ class Signup extends Component {
 
   render() {
     const {classes} = this.props
-    return (
-    <div>
+    return <div className={classes.root}>
         <Card className={classes.card}>
           <CardContent>
             <i className="material-icons">remove_red_eye</i>
-            <Typography type="headline" className={classes.title}>
-              
-              <h1>Sign up to see more</h1>
-              <p>Access Eyepetizer's best ideas with a free account</p>
+            <Typography type="display1" component="h1" align="center" className={classes.title}>
+            <h1>Sign up to see more</h1>
             </Typography>
-
+            <Typography type="headline" component="h1" align="center" className={classes.title}>
+              Access Eyepetizer's best ideas with a free account
+            </Typography>
             <TextField id="name" label="Name" className={classes.textField} value={this.state.name} onChange={this.handleChange("name")} margin="normal" />
             <br />
             <TextField id="email" type="email" label="Email" className={classes.textField} value={this.state.email} onChange={this.handleChange("email")} margin="normal" />
@@ -97,7 +103,7 @@ class Signup extends Component {
               Continue
             </Button>
           </CardActions>
-        <a href='/signin'>Log in if you already have an account</a>
+          <a href="/signin">Log in if you already have an account</a>
         </Card>
         <Dialog open={this.state.open} disableBackdropClick={true}>
           <DialogTitle>New Account</DialogTitle>
@@ -114,7 +120,7 @@ class Signup extends Component {
             </Link>
           </DialogActions>
         </Dialog>
-      </div>);
+      </div>;
   }
 }
 

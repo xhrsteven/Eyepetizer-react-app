@@ -9,27 +9,30 @@ import Grid from 'material-ui/Grid'
 import auth from './../auth/auth-helper'
 import FindPeople from './../user/FindPeople'
 import Newsfeed from './../post/Newsfeed'
-let imgUrl = './../assets/images/loginBackground.jpg'
+
 const styles = theme => ({
+
   root: {
     flexGrow: 1,
-    margin: 30,
-    backgroundImage: 'url(' + imgUrl + ')',
+    margin:0,
+    padding: 0,
+    height: 1000, 
+    backgroundImage: `url(${background})`,
     backgroundSize: 'cover',
-      overflow: 'hidden'
+    overflow: 'hidden',
     },
   
   card: {
-    maxWidth: 600,
+    maxWidth: 800,
     margin: 'auto',
-    marginTop: theme.spacing.unit * 5
+    marginTop: 50
   },
   title: {
     padding:`${theme.spacing.unit * 3}px ${theme.spacing.unit * 2.5}px ${theme.spacing.unit * 2}px`,
     color: theme.palette.text.secondary
   },
   media: {
-    minHeight: 330
+    minHeight: 500
   }
 })
 
@@ -52,39 +55,33 @@ class Home extends Component {
   }
   render() {
     const {classes} = this.props
-    return (
-      <div className={classes.root}>
-        {this.state.defaultPage &&
-          <div>
-          <Grid container spacing={24}>
-            <Grid item xs={12}>
-              <Card className={classes.card}>
-                <Typography type="headline" component="h2" className={classes.title}>
-                  Home Page
-                </Typography>
-                <CardMedia className={classes.media} image={background} title="rainer"/>
-                <CardContent>
-                  <Typography type="body1" component="p">
-                    Welcome to the Eyepetizer Social home page. 
+    return <div className={classes.root}>
+        {this.state.defaultPage && <div>
+            <Grid container spacing={24}>
+              <Grid item xs={12}>
+                <Card className={classes.card}>
+                  <Typography type="display2" align="center" className={classes.title}>
+                  <h1>Eyepetizer</h1>
                   </Typography>
-                </CardContent>
-              </Card>
+                  <CardMedia className={classes.media} image={background} title="rainer" />
+                  <CardContent>
+                    <Typography type="body1" component="p" align="center">
+                  <h2>A Social Application That Brings People Together</h2>
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
             </Grid>
-          </Grid>
-          </div>
-        }
-        {!this.state.defaultPage &&
-          <Grid container spacing={24}>
+          </div>}
+        {!this.state.defaultPage && <Grid container spacing={24}>
             <Grid item xs={9} sm={7}>
-              <Newsfeed/>
+              <Newsfeed />
             </Grid>
             <Grid item xs={3} sm={5}>
-              <FindPeople/>
+              <FindPeople />
             </Grid>
-          </Grid>
-        }
-      </div>
-    )
+          </Grid>}
+      </div>;
   }
 }
 
