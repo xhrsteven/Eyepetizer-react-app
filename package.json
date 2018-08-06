@@ -27,7 +27,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
-     "nodemon": "^1.17.3",
+    "nodemon": "^1.17.3",
     "postcss-loader": "^2.1.6",
     "style-loader": "^0.21.0",
     "webpack": "^4.6.0",
