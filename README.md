@@ -30,9 +30,10 @@ Eyepetizer is an easy to use social media app for coders that allows users to up
 * Create Powerpoint
 * Logo design
 
-# SKETCHES
-![Screen Shot](/client/assets/images/Scratch1.png)
-![Screen Shot](/client/assets/images/Scratch2.png)
+# Screenshots
+![Screen Shot](/client/assets/images/homepage.png)
+![Screen Shot](/client/assets/images/signup.png)
+![Screen Shot](/client/assets/images/login.png)
 
 # SCHEDULE FOR PROJECT COMPLETION:
 * Logo design by July 18, 2018.
