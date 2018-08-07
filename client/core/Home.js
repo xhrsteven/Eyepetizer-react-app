@@ -19,7 +19,7 @@ const styles = theme => ({
     height: 1000, 
     backgroundImage: `url(${background})`,
     backgroundSize: 'cover',
-    overflow: 'hidden',
+    overflow: 'auto',
     },
   
   card: {
@@ -66,7 +66,7 @@ class Home extends Component {
                   <CardMedia className={classes.media} image={background} title="rainer" />
                   <CardContent>
                     <Typography type="body1" component="p" align="center">
-                  <h2>A Social Application That Brings People Together</h2>
+                  <h2>A Social Application That Brings Coders Together</h2>
                     </Typography>
                   </CardContent>
                 </Card>

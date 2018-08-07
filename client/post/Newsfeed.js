@@ -11,19 +11,18 @@ import NewPost from './NewPost'
 
 const styles = theme => ({
   card: {
-    margin: 'auto',
+    margin: "auto",
     paddingTop: 0,
-    paddingBottom: theme.spacing.unit*3
+    paddingBottom: theme.spacing.unit * 3,
+    overflow: "auto"
   },
   title: {
-    padding:`${theme.spacing.unit * 3}px ${theme.spacing.unit * 2.5}px ${theme.spacing.unit * 2}px`,
+    padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 2.5}px ${theme
+      .spacing.unit * 2}px`,
     color: theme.palette.openTitle,
-    fontSize: '1em'
-  },
-  media: {
-    minHeight: 330
+    fontSize: "1em"
   }
-})
+});
 class Newsfeed extends Component {
   state = {
       posts: []
@@ -64,9 +63,9 @@ class Newsfeed extends Component {
           Newsfeed 
         </Typography>
         <Divider/>
-        <NewPost addUpdate={this.addPost}/>
+        <NewPost style={{ maxHeight: '100%', overflow: 'auto' }} addUpdate={this.addPost}/>
         <Divider/>
-        <PostList removeUpdate={this.removePost} posts={this.state.posts}/>
+        <PostList style={{ maxHeight: '100%', overflow: 'auto' }} removeUpdate={this.removePost} posts={this.state.posts}/>
       </Card>
     )
   }

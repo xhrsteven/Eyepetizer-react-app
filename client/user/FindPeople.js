@@ -16,12 +16,14 @@ import ViewIcon from 'material-ui-icons/Visibility'
 const styles = theme => ({
   root: theme.mixins.gutters({
     padding: theme.spacing.unit,
-    margin: 0
+    margin: 0,
+    overflow: "auto"
   }),
   title: {
-    margin: `${theme.spacing.unit * 3}px ${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
+    margin: `${theme.spacing.unit * 3}px ${theme.spacing.unit}px ${theme.spacing
+      .unit * 2}px`,
     color: theme.palette.openTitle,
-    fontSize: '1em'
+    fontSize: "2em"
   },
   avatar: {
     marginRight: theme.spacing.unit * 1
@@ -33,9 +35,9 @@ const styles = theme => ({
     color: theme.palette.protectedTitle
   },
   viewButton: {
-    verticalAlign: 'middle'
+    verticalAlign: "middle"
   }
-})
+});
 class FindPeople extends Component {
   state = {
       users: [],
@@ -78,8 +80,8 @@ class FindPeople extends Component {
     const {classes} = this.props
     return (<div>
       <Paper className={classes.root} elevation={4}>
-        <Typography type="title" className={classes.title}>
-          Who to follow
+        <Typography type="headline" align='center' className={classes.title}>
+          Who to follow<hr />
         </Typography>
         <List>
           {this.state.users.map((item, i) => {

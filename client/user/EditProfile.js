@@ -15,17 +15,18 @@ import {Redirect} from 'react-router-dom'
 const styles = theme => ({
   card: {
     maxWidth: 600,
-    margin: 'auto',
-    textAlign: 'center',
+    margin: "auto",
+    textAlign: "center",
     marginTop: theme.spacing.unit * 5,
-    paddingBottom: theme.spacing.unit * 2
+    paddingBottom: theme.spacing.unit * 2,
+    overflow: "auto"
   },
   title: {
     margin: theme.spacing.unit * 2,
     color: theme.palette.protectedTitle
   },
   error: {
-    verticalAlign: 'middle'
+    verticalAlign: "middle"
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -33,21 +34,21 @@ const styles = theme => ({
     width: 300
   },
   submit: {
-    margin: 'auto',
+    margin: "auto",
     marginBottom: theme.spacing.unit * 2
   },
   bigAvatar: {
     width: 60,
     height: 60,
-    margin: 'auto'
+    margin: "auto"
   },
   input: {
-    display: 'none'
+    display: "none"
   },
-  filename:{
-    marginLeft:'10px'
+  filename: {
+    marginLeft: "10px"
   }
-})
+});
 
 class EditProfile extends Component {
   constructor({match}) {

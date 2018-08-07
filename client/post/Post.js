@@ -20,7 +20,8 @@ const styles = theme => ({
     maxWidth: 600,
     margin: "auto",
     marginBottom: theme.spacing.unit * 3,
-    backgroundColor: "rgba(0, 0, 0, 0.06)"
+    backgroundColor: "rgba(0, 0, 0, 0.06)",
+    overflow: "auto"
   },
   cardContent: {
     backgroundColor: "white",
@@ -132,12 +133,12 @@ class Post extends Component {
         </CardContent>
         <CardActions>
           { this.state.like
-            ? <IconButton onClick={this.like} className={classes.button} aria-label="Like" color="secondary">
+            ? (<IconButton onClick={this.like} className={classes.button} aria-label="Like" color="secondary">
                 <FavoriteIcon />
-              </IconButton>
-            : <IconButton onClick={this.like} className={classes.button} aria-label="Unlike" color="secondary">
+              </IconButton>)
+            : (<IconButton onClick={this.like} className={classes.button} aria-label="Unlike" color="secondary">
                 <FavoriteBorderIcon />
-              </IconButton> } <span>{this.state.likes}</span>
+              </IconButton> )} <span>{this.state.likes}</span>
               <IconButton className={classes.button} aria-label="Comment" color="secondary">
                 <CommentIcon/>
               </IconButton> <span>{this.state.comments.length}</span>
