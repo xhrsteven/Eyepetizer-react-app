@@ -15,6 +15,9 @@
     "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
     "start": "NODE_ENV=production node ./dist/server.generated.js"
   },
+  "engines": {
+    "node": ">=6.x <7.x"
+  },
 
   "devDependencies": {
     "babel-core": "^6.26.2",
