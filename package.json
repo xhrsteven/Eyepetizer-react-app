@@ -16,8 +16,8 @@
     "start": "NODE_ENV=production node ./dist/server.generated.js"
   },
   "engines": {
-    "node": "8.11.1",
-    "npm": "5.8.0"
+    "node": "6.9.2",
+    "npm": "3.10.9"
   },
   "devDependencies": {
     "babel-core": "^6.26.2",
