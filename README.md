@@ -34,6 +34,7 @@ Eyepetizer is an easy to use social media app for coders that allows users to up
 ![Screen Shot](/client/assets/images/homepage.png)
 ![Screen Shot](/client/assets/images/signup.png)
 ![Screen Shot](/client/assets/images/login.png)
+![Screen Shot](/client/assets/images/Example.png)
 
 # SCHEDULE FOR PROJECT COMPLETION:
 * Logo design by July 18, 2018.
